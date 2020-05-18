@@ -1,32 +1,12 @@
-const Hapi = require('@hapi/hapi');
-
-const init = async () => {
-    const server = Hapi.server({
-        port:3000,
-        host:'localhost'
-    });
-
-    await server.start();
-    console.log('Server running on %s', server.info.uri);
-}
-
-process.on('unhandledRejection', (err) => {
-    console.log(err);
-    process.exit(1);
-});
-
-init();
-
-
 'use strict';
 
-const Config = require('./config.js');
-const Hapi = require('hapi');
+import { port as _port, host as _host } from './config.js';
+import { server as _server } from '@hapi/hapi';
 
 
-const server = Hapi.server({
-    port: Config.api.port,
-    host: Config.api.host,
+const myServer = _server({
+    port: _port,
+    host: _host,
     router: {
         stripTrailingSlash: true
     }
@@ -34,7 +14,7 @@ const server = Hapi.server({
 
 const init = async () => {
     try {
-        await server.register(
+        await myServer.register(
             [
                 {
                     plugin: require('./plugins/category')
@@ -43,7 +23,7 @@ const init = async () => {
                     plugin: require('./plugins/tag')
                 },
                 {
-                    plugin: require('good'),
+                    plugin: require('@hapi/good'),
                     options: {
                         reporters: {
                             console: [{
@@ -62,8 +42,8 @@ const init = async () => {
                 }
             ]
         );
-        await server.start();
-        console.log(`Server running at: ${server.info.uri}`);
+        await myServer.start();
+        console.log(`Server running at: ${myServer.info.uri}`);
     }
     catch (err) {
         console.error(err);

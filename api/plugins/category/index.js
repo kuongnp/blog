@@ -1,5 +1,6 @@
 'use strict';
 import routes from './route';
+
 const category = {
     name: 'category',
     version: '1.0.0',

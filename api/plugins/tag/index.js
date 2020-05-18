@@ -1,5 +1,5 @@
 'use strict';
-import router from './router';
+import router from './route';
 const category = {
     name: 'category',
     version: '1.0.0',
