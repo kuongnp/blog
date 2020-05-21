@@ -1,9 +1,12 @@
 'use strict';
 import routes from './route';
-const category = {
+
+const post = {
     name: 'post',
     version: '1.0.0',
     register: async function (server, options) {
-        server.route(routes);
+        //server.route(routes);
     }
 };
+
+module.exports = post;

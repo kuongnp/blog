@@ -8,3 +8,5 @@ const category = {
         server.route(routes);
     }
 };
+
+module.exports = category;

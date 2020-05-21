@@ -1,4 +1,4 @@
-var Model =  require('./model');
+var Model =  require('./model').default.default;
 var Service =  require('./service');
 
 /**
