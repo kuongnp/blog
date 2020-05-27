@@ -5,7 +5,7 @@ const media = {
     name: 'media',
     version: '1.0.0',
     register: async function (server, options) {
-        //server.route(routes);
+        server.route(routes);
     }
 };
 

@@ -1,15 +1,16 @@
-var Model =  require('./model').default.default;
+var Model =  require('./model');
 var Service =  require('./service');
 
 /**
  * List Items
  */
 exports.list = (req, h) => {
-    return Model.find({}).exec().then((item) => {
+    return 'hello';
+   /* return Model.find({}).exec().then((item) => {
         return item;
     }).catch((err) => {
         return { err: err };
-    });
+    });*/
 }
 
 /**

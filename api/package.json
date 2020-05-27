@@ -15,8 +15,10 @@
     "@babel/node": "^7.8.7",
     "@babel/preset-env": "^7.9.6",
     "@babel/preset-react": "^7.9.4",
+    "@hapi/content": "^5.0.2",
     "@hapi/hapi": "^19.1.1",
     "@hapi/joi": "^17.1.1",
+    "@hapi/pez": "^5.0.2",
     "mongoose": "^5.9.10"
   },
   "devDependencies": {
