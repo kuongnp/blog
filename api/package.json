@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "node ./index.js",
-    "dev": "nodemon --exec babel-node ./index.js",
+    "dev": "nodemon --exec babel-node --inspect ./index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
@@ -17,9 +17,11 @@
     "@babel/preset-react": "^7.9.4",
     "@hapi/content": "^5.0.2",
     "@hapi/hapi": "^19.1.1",
+    "@hapi/inert": "^6.0.1",
     "@hapi/joi": "^17.1.1",
     "@hapi/pez": "^5.0.2",
-    "mongoose": "^5.9.10"
+    "mongoose": "^5.9.10",
+    "uuid": "^8.1.0"
   },
   "devDependencies": {
     "@hapi/good": "^9.0.0",
