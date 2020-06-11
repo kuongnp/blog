@@ -9,7 +9,6 @@ import * as uuid from 'uuid';
 const internals = {};
 
 internals.interceptor = function (req, boundary) {
-
     const dispenser = new Pez.Dispenser({ boundary });
     const data = {};
     const set = function (name, value, headers, filename) {
