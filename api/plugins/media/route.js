@@ -3,7 +3,6 @@
 import { create, list, get, update, remove } from './controller.js';
 
 let routes = [
-    { method: 'GET', path: '/media', handler: list },
     {
         method: 'POST',
         path: '/media',
@@ -12,11 +11,12 @@ let routes = [
                 multipart: true,
                 output: 'stream',
                 parse: false,
-                maxBytes: '209715200'
+                maxBytes: '2147482548' //2GB
             },
             handler: create,
         }
     },
+    { method: 'GET', path: '/media', handler: list },
     { method: 'GET', path: '/media/{id}', handler: get },
     { method: 'PUT', path: '/media/{id}', handler: update },
     { method: 'DELETE', path: '/media/{id}', handler: remove }
