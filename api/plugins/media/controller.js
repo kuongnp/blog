@@ -9,13 +9,12 @@ import Content from '@hapi/content';
  * POST a Item
  */
 exports.create = async (req, h) => {
-    const payload = req.payload;
-    const contentType = Content.type(req.headers['content-type']);
-    //const my_req = new service.Payload(payload);
-    //const chunk = service.Payload(payload);
-    const result = await service.interceptor(req.payload,contentType.boundary);
-    //return result;*/
-    return 'Received your data hehel';
+    const payload = req.payload
+    const contentType = Content.type(req.headers['content-type'])
+    const streams = await service.interceptor(payload, contentType.boundary)
+    return await Promise.all(streams.files.map(file => {
+        return service.handle(file)
+    }))
 }
 
 /**
